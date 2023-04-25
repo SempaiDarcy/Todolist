@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    width: 300px;
+    height: max-content;
+    padding: 10px;
+}
+.deleteButton{
+    cursor: pointer;
+}
+.deleteButton:hover{
+    color: #b73e3e;
+}
+.cardFooter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

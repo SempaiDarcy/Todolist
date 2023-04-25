@@ -1,0 +1,11 @@
+.App {
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.AppHeader{
+  padding: 10px;
+}
+
