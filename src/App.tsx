@@ -1,26 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
+import {Todolist} from "./components/Todolist/Todolist";
 
+export type ButtonNameType = 'All' | 'Active' | 'Completed'
 function App() {
+    const title = 'What to learn';
+    // const tasks = [
+    //     {id: 1, title: 'HTML&CSS', isDone: true},
+    //     {id: 1, title: 'JS', isDone: true},
+    //     {id: 1, title: 'ReactJS', isDone: false},
+    // ]
+    let [tasks, setTasks] = useState([
+        {id: 1, title: 'HTML&CSS', isDone: true},
+        {id: 2, title: 'JS', isDone: true},
+        {id: 3, title: 'ReactJS', isDone: false},
+    ])
+    const removeTask = (id: number) => {
+        tasks = tasks.filter(el => el.id !== id)
+        setTasks(tasks)
+    }
+
     return (
         <div className="App">
-            <div>
-                <h3>What to learn</h3>
-                <div>
-                    <input/>
-                    <button>+</button>
-                </div>
-                <ul>
-                    <li><input type="checkbox" checked={true}/> <span>HTML&CSS</span></li>
-                    <li><input type="checkbox" checked={true}/> <span>JS</span></li>
-                    <li><input type="checkbox" checked={false}/> <span>React</span></li>
-                </ul>
-                <div>
-                    <button>All</button>
-                    <button>Active</button>
-                    <button>Completed</button>
-                </div>
-            </div>
+            <Todolist title={title} tasks={tasks} removeTask={removeTask}/>
         </div>
     );
 }
