@@ -4,3 +4,9 @@
 .error_message {
     color: red;
 }
+.todo {
+    display: flex;
+}
+.active_filter {
+    background-color: aquamarine;
+}
